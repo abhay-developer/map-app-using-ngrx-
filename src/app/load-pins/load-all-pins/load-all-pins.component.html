@@ -1,0 +1,23 @@
+<div class="row">
+      <div class="d-flex">
+            <div class="col-md-2">
+                  <div class="list-group list-group-flush overflow-auto vh-100">
+                        <div class="card m-2 bg-light"  *ngFor="let record of records">
+                              <img class="card-img-top " [src]="record.photo" alt="Card image cap">
+                              <div class="card-body">
+                                    <h5 class="card-title text-dard">{{record.name}}</h5>
+                                    <p class="card-text text-dark">Address: {{record.streetAddress}} {{record.city}} {{record.state}}</p>
+                                    <button class="btn btn-primary" (click)="onZoomClick(record.propertyID)">Zoom</button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <div class="col-md-10">
+                  <div class="map-wrap">
+                        <a href="https://www.maptiler.com" class="watermark"><img src="https://api.maptiler.com/resources/logo.svg"
+                                    alt="MapTiler logo" /></a>
+                        <div class="map" #map></div>
+                  </div>
+            </div>
+      </div>
+</div>

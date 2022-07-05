@@ -1,0 +1,54 @@
+<!-- <div>
+      <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+            <div class="position-sticky">
+                  <div class="list-group list-group-flush overflow-auto vh-100">
+                        <div class="card mb-2" style="width: 13rem;" *ngIf="!error">
+                              <img class="card-img-top" [src]="selectedPinData?.photo" alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">{{selectedPinData?.name}}</h5>
+                                <p class="card-text">Address: {{selectedPinData?.streetAddress}} {{selectedPinData?.city}} {{selectedPinData?.state}}</p>
+                              </div>
+                        </div>
+                        <div *ngIf="error">
+                              <h3>Error {{error}}</h3>
+                        </div>
+                  </div>
+            </div>
+      </nav>
+      
+      <main class="mt-4">
+            <div class="container">
+                  <div class="map-wrap">
+                        <a href="https://www.maptiler.com" class="watermark"><img src="https://api.maptiler.com/resources/logo.svg"
+                                    alt="MapTiler logo" /></a>
+                        <div class="map" #map></div>
+                  </div>
+            </div>
+      </main>
+</div> -->
+<div class="row">
+      <div class="d-flex">
+            <div class="col-md-2">
+                  <div class="list-group list-group-flush overflow-auto vh-100">
+                        <div class="card m-2 bg-light" *ngIf="!error">
+                              <img class="card-img-top" [src]="selectedPinData?.photo" alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">{{selectedPinData?.name}}</h5>
+                                <p class="card-text">Address: {{selectedPinData?.streetAddress}} {{selectedPinData?.city}} {{selectedPinData?.state}}</p>
+                                <button class="btn btn-primary" (click)="onBack()">Back</button>
+                              </div>
+                        </div>
+                        <div *ngIf="error">
+                              <h3>Error {{error}}</h3>
+                        </div>
+                  </div>
+            </div>
+            <div class="col-md-10">
+                  <div class="map-wrap">
+                        <a href="https://www.maptiler.com" class="watermark"><img src="https://api.maptiler.com/resources/logo.svg"
+                                    alt="MapTiler logo" /></a>
+                        <div class="map" #map></div>
+                  </div>
+            </div>
+      </div>
+</div>

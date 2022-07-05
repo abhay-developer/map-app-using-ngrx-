@@ -1,0 +1,35 @@
+<div *ngIf="!error">
+      <form [formGroup]="updateForm" (ngSubmit)="onUpdateForm()">
+            <div class="row">
+                  <div class="col-md-12">
+                        <h3>Update Marker</h3>
+                        <hr>
+                  </div>
+            </div>
+            <div class="row">
+                  <div class="d-flex">
+                        <div class="col-md-2 m-4">
+                              <label>Longititude:&nbsp;</label>
+                              <input type="number" class="form-control" formControlName="longititude">
+                        </div>
+      
+                        <div class="col-md-2 m-4">
+                              <label>Latitude:&nbsp;</label>
+                              <input type="number" class="form-control" formControlName="latitude">
+                        </div>
+      
+                        <div class="col-md-2 m-4">
+                              <label>Favourite</label>
+                              <input class="form-check-input form-control" type="checkbox" formControlName="fav">
+                        </div>
+      
+                        <div class="col-md-2 m-4">
+                              <button type="submit" class="btn btn-primary form-control mt-4">Update</button>
+                        </div>
+                  </div>
+            </div>
+      </form>
+</div>
+<div *ngIf="error">
+      <h3>Error: {{error}}</h3>
+</div>

@@ -1,0 +1,22 @@
+<form class="m-4" [formGroup]="searchForm" (ngSubmit)="onLocationSearch()">
+      <div class="row">
+            <div class="d-flex">
+                  <div class="col-md-2 m-2">
+                        <input type="text" class="form-control" formControlName="locationName">
+                        <div class="text-danger" *ngIf="searchForm.get('locationName')?.touched && searchForm.get('locationName')?.invalid">
+                              <p *ngIf="searchForm.get('locationName')?.errors?.['required']">Location Name is required</p>
+                              <p *ngIf="searchForm.get('locationName')?.errors?.['minlength']">Location Name is min 3 char long</p>
+                        </div>
+                  </div>
+                  <div class="col-md-2 m-2">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                  </div>
+            </div>
+      </div>
+</form>
+
+<div class="map-wrap">
+      <a href="https://www.maptiler.com" class="watermark"><img src="https://api.maptiler.com/resources/logo.svg"
+                  alt="MapTiler logo" /></a>
+      <div class="map" #map></div>
+</div>

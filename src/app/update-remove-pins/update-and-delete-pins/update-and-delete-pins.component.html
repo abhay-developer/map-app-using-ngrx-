@@ -1,0 +1,38 @@
+<div class="row">
+      <div class="d-flex">
+            <div class="col-md-2">
+                  <div class="list-group list-group-flush overflow-auto vh-100">
+                        <div *ngFor="let record of records; let i=index">
+                              <div class="card m-2 bg-light">
+                                    <img class="card-img-top " [src]="record.photo" alt="Card image cap">
+                                    <div class="card-body">
+                                          <h5 class="card-title text-dard" style="cursor: pointer;" (click)="onListClick(record.geocode.Longitude,record.geocode.Latitude)">{{i+1}} {{record.name}}</h5>
+                                          <p class="card-text text-dark">Address: {{record.streetAddress}} {{record.city}} {{record.state}}</p>
+                                          <div class="d-flex">
+                                                <img [src]="record.favorite?'assets/heart.png':'assets/heart_blank.png'" style="cursor: pointer;" class="m-2" width="24px">
+                                                <img src="assets/update.png" style="cursor: pointer;" class="m-2" width="24px" (click)="onUpdate(record.propertyID)">
+                                                <img src="assets/delete.png" style="cursor: pointer;" class="m-2" width="24px" (click)="onDelete(record.propertyID)">
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <div class="col-md-10">
+                  <div class="d-flex flex-column">
+                        <div class="row">
+                              <div class="col-md-12">
+                                    <router-outlet></router-outlet>
+                              </div>
+                              <div class="col-md-12">
+                                    <div class="map-wrap">
+                                          <a href="https://www.maptiler.com" class="watermark"><img src="https://api.maptiler.com/resources/logo.svg"
+                                                      alt="MapTiler logo" /></a>
+                                          <div class="map" #map></div>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
